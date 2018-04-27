@@ -24,11 +24,13 @@ pom.xml:
 
 Hello.thrift:
 
+'''
     namespace java service.demo
   
     service Hello {
         string helloString(1:string para)
     }
+'''
 
 运行命令：
 
@@ -52,6 +54,7 @@ thrift -r -gen java hello.thrift
 
 HelloServiceClient.java:
 
+'''
 import org.apache.thrift.TException;
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.protocol.TProtocol;
@@ -82,13 +85,15 @@ public class HelloServiceClient {
         }
     }
 }
-		
+'''	
+
 同时将 生成的 Hello.java 文件放在和 HelloServiceClient.java 同一路径下。
 
 4. 服务端
 
 server.py
 
+'''
 # coding:utf-8
 
 import sys
@@ -126,3 +131,4 @@ def run():
 
 if __name__ == '__main__':
     run()
+'''
