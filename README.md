@@ -4,6 +4,7 @@
 
 1. 使用 Maven 建立 Java 项目 
 
+```
 pom.xml:
 
 		<!-- Thrift -->
@@ -17,20 +18,20 @@ pom.xml:
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.5</version>
 		</dependency>
-
+```
 
 2. 再制定目录编写 thrift 接口
 
 
 Hello.thrift:
 
-'''
+```
     namespace java service.demo
   
     service Hello {
         string helloString(1:string para)
     }
-'''
+```
 
 运行命令：
 
@@ -54,7 +55,7 @@ thrift -r -gen java hello.thrift
 
 HelloServiceClient.java:
 
-'''
+```
 import org.apache.thrift.TException;
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.protocol.TProtocol;
@@ -85,7 +86,7 @@ public class HelloServiceClient {
         }
     }
 }
-'''	
+```
 
 同时将 生成的 Hello.java 文件放在和 HelloServiceClient.java 同一路径下。
 
@@ -93,7 +94,7 @@ public class HelloServiceClient {
 
 server.py
 
-'''
+```
 # coding:utf-8
 
 import sys
@@ -131,4 +132,4 @@ def run():
 
 if __name__ == '__main__':
     run()
-'''
+```
